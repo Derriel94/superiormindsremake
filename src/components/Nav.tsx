@@ -15,8 +15,8 @@ const Nav = () => {
 	      		</div>
 	      		<motion.div 
 	      		className="nav"
-	      		initial={{x: -600}}
-		    	animate={{x: 0}}
+	      		initial={{y: 600}}
+		    	animate={{y: 0}}
 		    	transition={{delay: 1, duration: 1, type: "spring", bounce: .2}}> 
 					<div><NavLink id="link" to="/home">Home</NavLink></div>
 					<div><NavLink id="link" to="/blogs">Blogs</NavLink></div>
