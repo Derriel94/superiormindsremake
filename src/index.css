@@ -5,7 +5,6 @@
 body {
   min-height: 100svh;
   overflow-x: hidden;
-  background: linear-gradient(rgba(255,255,255,.3),rgba(0,0,0,.5));
 }
 
 * {

@@ -12,7 +12,7 @@ const Home = ({}: RouterProps) => {
     };
 
 	return (
-		<div>
+		<div className="home">
 			<motion.div
 		        className="featuredblog"
 		        initial="initial"
@@ -40,7 +40,29 @@ const Home = ({}: RouterProps) => {
 		        	initial={{opacity: 0}}
 			        animate={{opacity: 1}}
 			        transition={{delay: 2, duration: 1}}>
-		        	<Link className="fullbloglink" to="/blog">Read More..</Link>
+		        	<Link className="fullbloglink" to="/blogs">Read More..</Link>
+		        </motion.div>	
+	        </motion.div>
+	        <motion.div 
+	        	className="featuredbloghomepageinfo2"
+	        	initial={{x: -900}}
+			    animate={{x: 0}}
+			    transition={{delay: 1, duration: 1}}>
+		        <motion.h2 className="blogtitle"
+		        	initial={{opacity: 0}}
+			        animate={{opacity: 1}}
+			        transition={{delay: 1.5, duration: 1}}>Stay Slow!</motion.h2>
+		        <motion.p className="bloginfo-short"
+		        	initial={{opacity: 0}}
+			        animate={{opacity: 1}}
+			        transition={{delay: 1.7, duration: 1}}>Stay Slow, a fast mind
+			        is a mind that can hold an ounce of love for the will power
+			        that you wish to show.</motion.p>
+		        <motion.div
+		        	initial={{opacity: 0}}
+			        animate={{opacity: 1}}
+			        transition={{delay: 2, duration: 1}}>
+		        	<Link className="fullbloglink" to="/blogs">Read More..</Link>
 		        </motion.div>	
 	        </motion.div>
 	      </motion.div>
@@ -48,20 +70,20 @@ const Home = ({}: RouterProps) => {
 	      	className="smallblogsection">
 		      	<div>
 			      	<img src="./2.jpg" />
-			      	<h4></h4>
-			      	<p></p>
-			      	<div><Link>Read More..</Link></div>
+			      	<h4> Voice Actor</h4>
+			      	<p>Using my voice to save the world 1 syllable at a time.</p>
+			      	<div><Link>Here More..</Link></div>
 		      	</div>
 		      	<div>
 			      	<img src="./2.jpg" />
-			      	<h4></h4>
-			      	<p></p>
+			      	<h4> Voice Actor</h4>
+			      	<p>Using my voice to save the world 1 syllable at a time.</p>
 		      	<div><Link>Read More..</Link></div>
 	      	</div>
 	      	<div>
 			      	<img src="./2.jpg" />
-			      	<h4></h4>
-			      	<p></p>
+			      	<h4> Voice Actor</h4>
+			      	<p>Using my voice to save the world 1 syllable at a time.</p>
 		      	<div><Link>Read More..</Link></div>
 	      	</div>
 	      </div>
