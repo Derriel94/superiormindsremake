@@ -12,6 +12,8 @@ const Nav = () => {
 					<div><NavLink to="/blogs">Blogs</NavLink></div>
 					<div><NavLink to="/music">Music</NavLink></div>
 					<div><NavLink to="/home">Voice Overs</NavLink></div>
+	      			<div><NavLink to="/contact">Contact Mac</NavLink></div>
+
 	      		</div>
 	      		<motion.div 
 	      		className="nav"
@@ -22,6 +24,7 @@ const Nav = () => {
 					<div><NavLink id="link" to="/blogs">Blogs</NavLink></div>
 					<div><NavLink id="link" to="/music">Music</NavLink></div>
 					<div><NavLink id="link" to="/home">Voice Overs</NavLink></div>
+	      			<div><NavLink id="link" to="/contact">Contact Mac</NavLink></div>
 	      		</motion.div>
 	      	</div>
 		);
