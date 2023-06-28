@@ -1,6 +1,8 @@
 import './App.css'
 import { useState, ChangeEvent } from "react";
 import { motion } from "framer-motion";
+import Nav from "./components/Nav"
+import Home from "./pages/Home";
 
 const App = () => {
 
@@ -19,13 +21,6 @@ const App = () => {
 
     };
 
-      const featuredVariants = {
-      initial: {opacity: 0, x: 2000},
-      animate: {opacity: 1, x: 0, transition: {
-        delay: .4, duration: 1.5,
-      }},
-
-    };
 
 
   return (
@@ -36,20 +31,14 @@ const App = () => {
       animate="animate"
       exit="exit"
       variants={headerVariants}>
-        <div><p>What Did You Learn Today?</p></div>
+        <div><p style={{color: "gold", opacity: .9}}>What Did You Learn Today?</p></div>
         <div>
           <input placeholder={search} className="search" onChange={(e)=>handleSearchChange(e)}/>
           <input type="submit" value="GO" onClick={handleSubmit} className="gobutton" />
         </div>
       </motion.div>
-      <motion.div
-        className="featuredblog"
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        variants={featuredVariants}>
-        <img src="./2.jpg" />
-      </motion.div>
+      <Nav />
+      <Home />
     </div>
   )
 }
