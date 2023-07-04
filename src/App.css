@@ -2,6 +2,7 @@
 #root {
   margin: 0 auto;
   font-size: 18px;
+   
 }
 
 
@@ -26,7 +27,33 @@
   margin-right: 1%;
 }
 .home {
-
+  background-color:black;
+  display:   flex;
+   --homepink: rgba(209,105,140, 1);
+   --homeblue: rgba(52,107,201, 1);
+   --homegold: rgba(208,148,56, 1);
+   display:   flex;
+}
+.hometextbubble {
+    height:   300px;
+    width:  300px;
+    color: white;
+}
+.pink {
+     background-color: var(--homepink);
+}
+.blue {
+    background-color: var(--homeblue);
+}
+.gold {
+    background-color: var(--homegold);
+}
+.mainimg{
+  box-shadow: inset 20px 20px 20px 20px black;
+  margin-left:  250px;
+}
+.blogs {
+    
 }
 .featuredblog {
   height: 60svh;
@@ -93,7 +120,9 @@
 }
 .nav {
   display: flex;
-  margin: .2rem;
+  justify-content: flex-end;
+  padding: .2rem;
+  background-color: black;
   
 }
 .nav div{

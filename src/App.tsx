@@ -2,7 +2,8 @@ import './App.css'
 import { useState, ChangeEvent } from "react";
 import { motion } from "framer-motion";
 import Nav from "./components/Nav"
-import Home from "./pages/Home";
+import RouterNav from "./router/RouterNav.tsx"
+
 
 const App = () => {
 
@@ -38,7 +39,7 @@ const App = () => {
         </div>
       </motion.div>
       <Nav />
-      <Home />
+      <RouterNav  />
     </div>
   )
 }
