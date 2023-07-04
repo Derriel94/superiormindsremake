@@ -2,9 +2,16 @@
 #root {
   margin: 0 auto;
   font-size: 18px;
-   
+    --homepink: rgba(209,105,140, 1);
+   --homeblue: rgba(52,107,201, 1);
+   --homegold: rgba(231,177,105,1);
+   color:var(--homegold);
+
 }
 
+.app{
+
+}
 
 .header {
   display: flex;
@@ -12,7 +19,7 @@
   justify-content: flex-end;
   font-size: clamp(.8rem,1.1rem,1.5rem);
   background: black;
-  color: ghostwhite;
+  color:var(--homegold);
   position: sticky;
   top: 0;
   left: 0;
@@ -29,15 +36,28 @@
 .home {
   background-color:black;
   display:   flex;
-   --homepink: rgba(209,105,140, 1);
-   --homeblue: rgba(52,107,201, 1);
-   --homegold: rgba(208,148,56, 1);
-   display:   flex;
+  justify-content:  center;
+   flex-wrap: wrap;
+   position:  relative;
+  
+}
+.bubblecontainer {
+  display:  flex;
+  flex-direction: column;
+}
+.bubblecontainer div:nth-child(2) {
+/*  margin-left:  400px;*/
 }
 .hometextbubble {
     height:   300px;
     width:  300px;
     color: white;
+    position:   relative;
+    opacity: .9;
+    border-radius:  30px;
+}
+.hometextbubble h2 {
+  padding:  2%;
 }
 .pink {
      background-color: var(--homepink);
@@ -48,9 +68,29 @@
 .gold {
     background-color: var(--homegold);
 }
+.foliage {
+  position: absolute;
+}
+.top-left {
+  left:0;
+  top:0;
+}
+.top-right {
+
+}
+.bottom-right {
+ right: 1%;
+ bottom: 1%;
+}
+.bottom-left {
+  bottom: 1%;
+  left: 35%;
+  z-index:  0;
+
+}
 .mainimg{
   box-shadow: inset 20px 20px 20px 20px black;
-  margin-left:  250px;
+  
 }
 .blogs {
     
@@ -131,7 +171,7 @@
 }
 #link {
   text-decoration: none;
-  color: gold;
+  color: var(--homegold);
   transition: .6s;
   font-size: 1.3rem;
 

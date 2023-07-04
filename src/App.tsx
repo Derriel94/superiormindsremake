@@ -32,7 +32,7 @@ const App = () => {
       animate="animate"
       exit="exit"
       variants={headerVariants}>
-        <div><p style={{color: "gold", opacity: .9}}>What Did You Learn Today?</p></div>
+        <div><p style={{opacity: .9}}>What Did You Learn Today?</p></div>
         <div>
           <input placeholder={search} className="search" onChange={(e)=>handleSearchChange(e)}/>
           <input type="submit" value="GO" onClick={handleSubmit} className="gobutton" />
