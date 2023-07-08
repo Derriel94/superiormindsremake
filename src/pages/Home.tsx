@@ -5,20 +5,6 @@ const Home = ({}: RouterProps) => {
 
 	return (
 		<div className="home">
-		{/*		<motion.img 
-				initial={{opacity: 0}}
-				animate={{opacity	:1}}
-				exit={{opacity	:1}}
-				transition={{delay: 1, duration: 2}}
-				className="foliage bottom-left"
-				src="./2.svg"/>
-					<motion.img 
-				initial={{opacity: 0}}
-				animate={{opacity	:1}}
-				exit={{opacity	:1}}
-				transition={{delay: 1, duration: 2}}
-				className="foliage bottom-right"
-				src="./3.svg"/>*/}
 				<motion.img 
 				initial={{opacity: 0}}
 				animate={{opacity	:1}}

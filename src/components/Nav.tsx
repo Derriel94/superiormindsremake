@@ -1,3 +1,4 @@
+import {useState} from "react";
 import {NavLink} from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -5,16 +6,50 @@ import { motion } from "framer-motion";
 
 const Nav = () => {
 
-	return (
-			<div>
-				<div className="mobilenav"> 
-					<div><NavLink to="/home">Home</NavLink></div>
-					<div><NavLink to="/blogs">Blogs</NavLink></div>
-					<div><NavLink to="/music">Music</NavLink></div>
-					<div><NavLink to="/home">Voice Overs</NavLink></div>
-	      			<div><NavLink to="/contact">Contact Mac</NavLink></div>
+	const [menuSwitch, setMenuSwitch] = useState<boolean>();
+	const [menuName, setMenuName] = useState<boolean>("Menu");
+	const toggleMenu = () => {
+		if (menuSwitch) {
+			setMenuSwitch(false);
+			setMenuName("menu")
+		} else {
+			setMenuSwitch(true);
+			setMenuName('close')
+		}
+	}
 
-	      		</div>
+	return (
+			<div className="nav-container">
+				<button className="mobilenavbutton" onClick={toggleMenu}>{menuName}</button>
+				{menuSwitch?
+				<motion.div 
+					className="mobilenav"> 
+					<motion.div
+					initial={{x: -100}}
+		    		animate={{x: 0}}
+		    		transition={{delay: 0, duration: 1, type: "spring", bounce: .2}}><NavLink id="link" to="/home">Home</NavLink></motion.div>
+					<motion.div			
+					initial={{x: -100}}
+		    		animate={{x: 0}}
+		    		transition={{delay: .2, duration: 1, type: "spring", bounce: .2}}><NavLink id="link" to="/blogs">Blogs</NavLink></motion.div>
+					<motion.div
+					initial={{x: -100}}
+		    		animate={{x: 0}}
+		    		transition={{delay: .4, duration: 1, type: "spring", bounce: .2}}
+					><NavLink id="link" to="/music">Music</NavLink></motion.div>
+					<motion.div
+					initial={{x: -130}}
+		    		animate={{x: 0}}
+		    		transition={{delay: .6, duration: 1, type: "spring", bounce: .2}}
+					><NavLink id="link" to="/voiceover">Voice Overs</NavLink></motion.div>
+	      			<motion.div
+					initial={{x: -130}}
+		    		animate={{x: 0}}
+		    		transition={{delay: .8, duration: 1, type: "spring", bounce: .2}}><NavLink id="link" to="/contact">Contact Mac</NavLink></motion.div>
+	      		</motion.div>
+	      		:
+	      		<></>
+				}
 	      		<motion.div 
 	      		className="nav"
 	      		initial={{y: 600}}
@@ -23,7 +58,7 @@ const Nav = () => {
 					<div><NavLink id="link" to="/home">Home</NavLink></div>
 					<div><NavLink id="link" to="/blogs">Blogs</NavLink></div>
 					<div><NavLink id="link" to="/music">Music</NavLink></div>
-					<div><NavLink id="link" to="/home">Voice Overs</NavLink></div>
+					<div><NavLink id="link" to="/voiceover">Voice Overs</NavLink></div>
 	      			<div><NavLink id="link" to="/contact">Contact Mac</NavLink></div>
 	      		</motion.div>
 	      	</div>
