@@ -10,7 +10,7 @@
 }
 
 .app{
-
+   background-color: black;
 }
 
 .header {
@@ -25,7 +25,7 @@
   left: 0;
   min-width: 319px;
 /*  box-shadow: 0px 0px 10px 10px black;*/
-  z-index: 3;*/
+  z-index: 3;
 }
 .header div:nth-child(1) {
 /*  margin-right: clamp(10%,33.2%, 37%);*/
@@ -161,7 +161,7 @@
 }
  .mobilenavbutton {
     position: sticky;
-    top: clamp(0, 1rem, 50px);
+    top: 0;
     z-index: 3;
     display: none;
     cursor: pointer;
@@ -237,4 +237,68 @@
 .smallblogsection div img {
   height: 16rem;
   width: auto;
+}
+.music {
+
+
+}
+.slider {
+  position: relative;
+  width: 100%;
+}
+.inner-slide {
+  display: flex;
+  position: relative;
+  display: grid;
+place-items: center;
+
+}
+.inner-slider h1 {
+  position: absolute;
+  bottom: -40px;
+}
+iframe {
+  border-radius: 20px;
+}
+
+.slider button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+
+}
+.slider button:nth-child(1) {
+  left: 20%;
+  top: 200px;
+
+
+}
+.slider button:nth-child(3) {
+  right: 20%;
+  top: 200px;
+
+}
+@media (orientation: portrait) and (max-width: 480px) {
+  .slider {
+    margin-top: 50px;
+  }
+  iframe {
+    width: 320px;
+    height: 315px;
+
+  }
+  .slider button:nth-child(1) {
+  left: 0px;
+  top: 150px;
+
+
+}
+.slider button:nth-child(3) {
+  right: 0px;
+  top: 150px;  
+
 }
