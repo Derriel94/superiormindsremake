@@ -39,7 +39,37 @@ const App = () => {
         </div>
       </motion.div>
       <Nav />
-      <RouterNav  />
+      <RouterNav />
+      <div className="footer">
+        <h1>Social Media</h1>
+        <div>
+          <a href=" https://linktr.ee/MadMac21" 
+           target="_blank" 
+           rel="noreferrer"
+           style={{textDecoration: "none", color: "papayawhip"}}> LinkTree 
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/macstract/?hl=af"
+           target="_blank"
+           rel="noreferrer"
+           style={{textDecoration: "none", color: "papayawhip"}}>Instagram: Mactract 
+           </a>
+        </div>
+        <div>
+          <a href="https://www.linkedin.com/in/superior-minds-ink-869565207/"
+             target="_blank"
+             rel="noreferrer"
+             style={{textDecoration: "none", color: "papayawhip"}}> Linkdein: Christain Mcbride 
+             </a>
+        </div>
+        <div>
+          <a href="https://www.youtube.com/channel/UCBHFh0ZVLkxTvwoYW3hLZ9Q/featured"
+             target="_blank"
+             rel="noreferrer" 
+             style={{textDecoration: "none", color: "papayawhip"}}> Youtube: Mad Mac 
+             </a></div>
+        </div>
     </div>
   )
 }

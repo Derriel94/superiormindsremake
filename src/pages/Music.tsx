@@ -7,7 +7,7 @@ interface MusicProps {
 
 
 const Music = ({}: MusicProps) => {
-	const [width, setWidth] = useState<number>(0);
+
 	let [currentIndex, setCurrentIndex] = useState<number>(0);
 
 	const MusicVideoList = [	
@@ -45,14 +45,13 @@ const Music = ({}: MusicProps) => {
 	}
 	return (
 			<div className="music">
-
+				<h1 style={{textAlign: "center"}}>Music</h1>
 				<div className="slider">
 					<motion.button 
 					initial={{opacity: 0}}
 					animate={{opacity: 1}}
 					transition={{ duration: 1.5, repeat: Infinity}}
-					onClick={gotoPrevSlide}>⇚</motion.button>
-				
+					onClick={gotoPrevSlide}>⇚</motion.button>		
 				 		<motion.div 
 				 		initial={{x: -500}}
 						animate={{x: 0}}
@@ -60,24 +59,22 @@ const Music = ({}: MusicProps) => {
 						whileTap={{x: 0}}
 						transition={{ duration: 1.5}}
 				 		className="inner-slide">
-										<iframe 
-										width="760" 
-										height="515" 
-										src={MusicVideoList[currentIndex].url} 
-										title="YouTube video player" 
-										frameBorder="0" 
-										allow="accelerometer; autoplay;
-										 clipboard-write; encrypted-media; 
-										 gyroscope; picture-in-picture; web-share" 
-										 allowFullScreen />
+								<iframe 
+								width="760" 
+								height="515" 
+								src={MusicVideoList[currentIndex].url} 
+								title="YouTube video player" 
+								frameBorder="0" 
+								allow="accelerometer; autoplay;
+								 clipboard-write; encrypted-media; 
+								 gyroscope; picture-in-picture; web-share" 
+								allowFullScreen />
 						</motion.div>
-
 					<motion.button 
 					initial={{opacity: 0}}
 					animate={{opacity: 1}}
 					transition={{ duration: 1.5, repeat: Infinity}}
 					onClick={gotoNextSlide}>⇛</motion.button>
-			
 				</div>
 			</div>
 		);

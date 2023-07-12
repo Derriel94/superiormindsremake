@@ -6,13 +6,14 @@ const Blogs = ({}: RouterProps) => {
      const featuredVariants = {
       initial: {opacity: 0, y: -1000},
       animate: {opacity: 1, y: 0, transition: {
-         duration: 2.5, bounce: 0.3,type: "spring",
+         duration: 2.5, bounce: 0.3, type: "spring",
       }},
 
     };
 
 	return (
 		<div className="blogs">
+		<h1 style={{textAlign: "center"}}>Blogs</h1>
 			<motion.div
 		        className="featuredblog"
 		        initial="initial"

@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {NavLink} from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -11,12 +11,18 @@ const Nav = () => {
 	const toggleMenu = () => {
 		if (menuSwitch) {
 			setMenuSwitch(false);
-			setMenuName("menu")
+			setMenuName("menu");
 		} else {
 			setMenuSwitch(true);
-			setMenuName('close')
+			setMenuName('close');
 		}
 	}
+
+	useEffect(()=>{
+		if (menuSwitch) {
+			setMenuSwitch(false)
+		}
+	},[])
 
 	return (
 			<div className="nav-container">

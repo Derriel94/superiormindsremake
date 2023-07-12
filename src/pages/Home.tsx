@@ -5,13 +5,16 @@ const Home = ({}: RouterProps) => {
 
 	return (
 		<div className="home">
+			<div style={{textAlign: "center"}}>
+				<h1>Christian Mcbride</h1>
 				<motion.img 
 				initial={{opacity: 0}}
 				animate={{opacity	:1}}
 				exit={{opacity	:1}}
 				transition={{delay: 1, duration: 2}}
 				className	="mainimg"
-				src="./solosmall.svg" />
+				src="./headshot.svg" />
+			</div>
 				<div className="bubblecontainer">
 						<div style={{display: "flex",alignItems:"center",justifyContent: "space-around"}}>
 						<motion.div 
@@ -20,7 +23,7 @@ const Home = ({}: RouterProps) => {
 							exit={{opacity	:1}}
 							transition={{delay: 1, duration: 2}}
 							className="hometextbubble pink"><h2>This will be a knowledge bubble that is pink</h2></motion.div>
-						<div>This is what is revealed</div>
+					
 						</div>
 						<div style={{display: "flex", alignItems:"center",justifyContent: "space-around"}}>
 						<motion.div 
@@ -29,7 +32,7 @@ const Home = ({}: RouterProps) => {
 							exit={{opacity	:1}}
 							transition={{delay: 1, duration: 2}}
 							className="hometextbubble blue"><h2>This will be a knowledge bubble that is blue</h2></motion.div>
-						<div>this is what is revealed</div>
+				
 						</div>
 						<div style={{display: "flex",alignItems:"center",justifyContent: "space-around"}}>
 						<motion.div initial={{opacity: 0, marginLeft: "400px"}}
@@ -38,9 +41,8 @@ const Home = ({}: RouterProps) => {
 							transition={{delay: 1, duration: 2}}
 							className="hometextbubble gold"><h2>This will be a knowledge bubble that is gold</h2></motion.div>
 	      	
-	      	<div>this is what is revealed</div>
-	      	</div>
-	      	</div>
+	      				</div>
+	      		</div>
 
       </div>
 		);

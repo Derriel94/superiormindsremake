@@ -4,6 +4,7 @@ import Blogs from "./../pages/Blogs.tsx";
 import Music from "./../pages/Music.tsx";
 import Searched from "./../pages/Searched.tsx";
 import VoiceOver from "./../pages/VoiceOver.tsx";
+import Contact from "./../pages/Contact.tsx";
 
 interface RouterProps { 
 	
@@ -19,6 +20,7 @@ const RouterNav = ({}: RouterProps) => {
 		      	<Route path="/searched" element={<Searched />} />
 		      	<Route path="/music" element={<Music />} />
 		      	<Route path="/voiceover" element={<VoiceOver />} />
+		      	<Route path="/contact" element={<Contact />} />
 		      	<Route path="/home" element={<Home />} />
 	      	</Routes>
 		);
