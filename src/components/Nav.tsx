@@ -48,6 +48,11 @@ const Nav = () => {
 		    		animate={{x: 0}}
 		    		transition={{delay: .6, duration: 1, type: "spring", bounce: .2}}
 					><NavLink id="link" to="/voiceover">Voice Overs</NavLink></motion.div>
+					<motion.div
+					initial={{x: -130}}
+		    		animate={{x: 0}}
+		    		transition={{delay: .7, duration: 1, type: "spring", bounce: .2}}
+					><NavLink id="link" to="/bio">Bio</NavLink></motion.div>
 	      			<motion.div
 					initial={{x: -130}}
 		    		animate={{x: 0}}
@@ -65,6 +70,7 @@ const Nav = () => {
 					<div><NavLink id="link" to="/blogs">Blogs</NavLink></div>
 					<div><NavLink id="link" to="/music">Music</NavLink></div>
 					<div><NavLink id="link" to="/voiceover">Voice Overs</NavLink></div>
+					<div><NavLink id="link" to="/bio">Bio</NavLink></div>
 	      			<div><NavLink id="link" to="/contact">Contact Mac</NavLink></div>
 	      		</motion.div>
 	      	</div>

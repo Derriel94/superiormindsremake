@@ -16,40 +16,37 @@ const Contact = ({}: RouterProps) => {
     console.log(conFom)
   }
 	return (
-		<div className="Contact">
+		<div className="contact">
 			<div style={{textAlign: "center"}}>
 				<h1>Contact Christian</h1>
-				
 			</div>
-			    <div className="container mt-5">
-    
-      <form style={{textAlign:"center", display: "flex", flexDirection: "column",alignItems: "center"}}
-      		onSubmit={onSubmit}>
-        <div className="mb-3">
-          <h4 className="form-h4" htmlFor="name">
-            Name
-          </h4>
-          <input className="form-control" type="text" id="name" required />
-        </div>
-        <div className="mb-3">
-          <h4 className="form-h4" htmlFor="email">
-            Email
-          </h4>
-          <input className="form-control" type="email" id="email" required />
-        </div>
-        <div className="mb-3">
-          <h4 className="form-h4" htmlFor="message">
-            Message
-          </h4>
-          <textarea className="form-control" id="message" required />
-        </div>
-        <button className="btn btn-danger" type="submit">
-          {formStatus}
-        </button>
-      </form>
-    </div>
-
-
+			<div className="">
+			    
+			      <form style={{marginTop: "clamp(30px,20px,50px)", textAlign:"center", display: "flex", flexDirection: "column",alignItems: "center"}}
+			      		onSubmit={onSubmit}>
+			        <div className="">
+			          <h4 className="" htmlFor="name">
+			            Name
+			          </h4>
+			          <input className="form-control" type="text" id="name" required />
+			        </div>
+			        <div className="">
+			          <h4 className="" htmlFor="email">
+			            Email
+			          </h4>
+			          <input className="form-control" type="email" id="email" required />
+			        </div>
+			        <div className="">
+			          <h4 className="" htmlFor="message">
+			            Message
+			          </h4>
+			          <textArea className="form-control" id="message" required />
+			        </div>
+			        <button className="btn btn-danger" type="submit">
+			          {formStatus}
+			        </button>
+			      </form>
+    		</div>
       </div>
 		);
 };

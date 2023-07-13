@@ -53,7 +53,7 @@ const App = () => {
           <a href="https://www.instagram.com/macstract/?hl=af"
            target="_blank"
            rel="noreferrer"
-           style={{textDecoration: "none", color: "papayawhip"}}>Instagram: Mactract 
+           style={{textDecoration: "none", color: "papayawhip"}}>Instagram: Macstract 
            </a>
         </div>
         <div>
