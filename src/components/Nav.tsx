@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Nav = () => {
 
 	const [menuSwitch, setMenuSwitch] = useState<boolean>();
-	const [menuName, setMenuName] = useState<boolean>("Menu");
+	const [menuName, setMenuName] = useState<string>("Menu");
 	const toggleMenu = () => {
 		if (menuSwitch) {
 			setMenuSwitch(false);
@@ -67,7 +67,7 @@ const Nav = () => {
 		    	animate={{y: 0}}
 		    	transition={{delay: 1, duration: 1, type: "spring", bounce: .2}}> 
 					<div><NavLink id="link" to="/home">Home</NavLink></div>
-					<div><NavLink id="link" to="/blogs">Blogs</NavLink></div>
+					<div><NavLink id="link" to="/blogs">Creative Writing</NavLink></div>
 					<div><NavLink id="link" to="/music">Music</NavLink></div>
 					<div><NavLink id="link" to="/voiceover">Voice Overs</NavLink></div>
 					<div><NavLink id="link" to="/bio">Bio</NavLink></div>

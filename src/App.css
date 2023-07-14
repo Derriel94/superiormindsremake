@@ -40,15 +40,16 @@ body {
 .home {
   background-color:black;
   display:   flex;
-  justify-content:  center;
+  justify-content: space-around;
   flex-wrap: wrap;
   position:  relative;
   
 }
-.bubblecontainer {
+.right-side {
   display:  flex;
   flex-direction: column;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .hometextbubble {
@@ -91,9 +92,12 @@ body {
   z-index:  0;
 
 }
+.left-side {
+ text-align: center;
+}
 .mainimg{
   box-shadow: inset 20px 20px 20px 20px black;
- overflow-x: hidden;
+  overflow-x: hidden;
   
 }
 .blogs {
@@ -267,7 +271,7 @@ body {
 iframe {
   border-radius: 20px;
   box-shadow: 0px 0px 5px 5px white;
-  max-width: 100%;
+ 
   position: relative;
   z-index: 1;
 }
@@ -301,7 +305,7 @@ iframe {
     margin-top: 50px;
   }
   iframe {
-    width: 320px;
+    width: 315px;
     height: 315px;
 
   }
@@ -316,9 +320,9 @@ iframe {
   top: 150px;  
 
   }
-  .bubblecontainer div:nth-child(2) {
+/*  .bubblecontainer div:nth-child(2) {
   margin-left:  -400px;
-  }
+  }*/
   .featuredbloghomepageinfo {
     margin-top: 100px;
   }
@@ -336,7 +340,7 @@ iframe {
   flex-direction: column;
   justify-content: space-between;
 }
-.contact div textArea{
+.contact div textarea{
 
   height: 200px;
   width: 300px;

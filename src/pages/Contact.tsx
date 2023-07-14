@@ -1,20 +1,20 @@
-import {useState} from "react";
-import { motion } from "framer-motion";
-import {Link} from "react-router-dom";
+// import {useState, ChangeEvent} from "react";
+// import { motion } from "framer-motion";
+// import {Link} from "react-router-dom";
 
-const Contact = ({}: RouterProps) => {
-	const [formStatus, setFormStatus] = useState('Send')
-  const onSubmit = (e) => {
-    e.preventDefault()
-    setFormStatus('Submitting...')
-    const { name, email, message } = e.target.elements
-    let conFom = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    }
-    console.log(conFom)
-  }
+const Contact = () => {
+// 	const [formStatus, setFormStatus] = useState('Send')
+  // const onSubmit = (e :ChangeEvent<HTMLFormControlsCollection>) => {
+  //   e.preventDefault()
+  //   setFormStatus('Submitting...')
+  //   const { name, email, message } = e.target.elements
+  //   let conFom = {
+  //     name: name.value,
+  //     email: email.value,
+  //     message: message.value,
+  //   }
+  //   console.log(conFom)
+  // }
 	return (
 		<div className="contact">
 			<div style={{textAlign: "center"}}>
@@ -23,27 +23,27 @@ const Contact = ({}: RouterProps) => {
 			<div className="">
 			    
 			      <form style={{marginTop: "clamp(30px,20px,50px)", textAlign:"center", display: "flex", flexDirection: "column",alignItems: "center"}}
-			      		onSubmit={onSubmit}>
+			      		>
 			        <div className="">
-			          <h4 className="" htmlFor="name">
+			          <h4 className="">
 			            Name
 			          </h4>
 			          <input className="form-control" type="text" id="name" required />
 			        </div>
 			        <div className="">
-			          <h4 className="" htmlFor="email">
+			          <h4 className="">
 			            Email
 			          </h4>
 			          <input className="form-control" type="email" id="email" required />
 			        </div>
 			        <div className="">
-			          <h4 className="" htmlFor="message">
+			          <h4 className="">
 			            Message
 			          </h4>
-			          <textArea className="form-control" id="message" required />
+			          <textarea className="form-control" id="message" required />
 			        </div>
 			        <button className="btn btn-danger" type="submit">
-			          {formStatus}
+			          {/*{formStatus}*/}
 			        </button>
 			      </form>
     		</div>

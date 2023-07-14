@@ -16,7 +16,7 @@ const RouterNav = ({}: RouterProps) => {
 
 	return (
 			<Routes>  	
-				<Route path="/" element={<Navigate to='home'/>} />
+				<Route path="/" element={<Navigate to='/home'/>} />
 		      	<Route path="/blogs" element={<Blogs />} />
 		      	<Route path="/searched" element={<Searched />} />
 		      	<Route path="/music" element={<Music />} />

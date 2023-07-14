@@ -1,8 +1,6 @@
-import {useState} from "react";
-import { motion } from "framer-motion";
-import {Link} from "react-router-dom";
 
-const Bio = ({}: RouterProps) => {
+
+const Bio = () => {
 
 	return (
 		<div style={{textAlign: "left", margin: "0 10%"}} className="Bio">

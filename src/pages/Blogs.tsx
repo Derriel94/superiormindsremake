@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {Link} from "react-router-dom";
 
-const Blogs = ({}: RouterProps) => {
+const Blogs = () => {
 
      const featuredVariants = {
       initial: {opacity: 0, y: -1000},
@@ -73,19 +73,19 @@ const Blogs = ({}: RouterProps) => {
 			      	<img src="./2.jpg" />
 			      	<h4> Voice Actor</h4>
 			      	<p>Using my voice to save the world 1 syllable at a time.</p>
-			      	<div><Link>Here More..</Link></div>
+			      	<div><Link to="/">Here More..</Link></div>
 		      	</div>
 		      	<div>
 			      	<img src="./2.jpg" />
 			      	<h4> Voice Actor</h4>
 			      	<p>Using my voice to save the world 1 syllable at a time.</p>
-		      	<div><Link>Read More..</Link></div>
+		      	<div><Link to="/">Read More..</Link></div>
 	      	</div>
 	      	<div>
 			      	<img src="./2.jpg" />
 			      	<h4> Voice Actor</h4>
 			      	<p>Using my voice to save the world 1 syllable at a time.</p>
-		      	<div><Link>Read More..</Link></div>
+		      	<div><Link to="/">Read More..</Link></div>
 	      	</div>
 	      </div>
       </div>
