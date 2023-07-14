@@ -13,7 +13,7 @@ const Blogs = () => {
 
 	return (
 		<div className="blogs">
-		<h1 style={{textAlign: "center"}}>Blogs</h1>
+		<h1 style={{textAlign: "center"}}>Creative Writing</h1>
 			<motion.div
 		        className="featuredblog"
 		        initial="initial"

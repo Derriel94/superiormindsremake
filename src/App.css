@@ -50,6 +50,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
+  position: relative;
 }
 
 .hometextbubble {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import {NavLink} from "react-router-dom";
 
 const Home = () => {
 
@@ -25,8 +25,9 @@ const Home = () => {
 							exit={{opacity	:1}}
 							transition={{delay: 1, duration: 2}}
 							className="">
+							<div style={{position: "absolute", left: "-200px", top: "200px"}}>Play Demo ⇛</div>
 							<div>
-								<h2>Voice Actor </h2>
+								<h2><NavLink id="link" to="/voiceover">Voice Actor</NavLink></h2>
 								<iframe 
 									width="315" 
 									height="315" 
@@ -36,8 +37,9 @@ const Home = () => {
 									allow="mute=1; autoplay;" 
 									allowFullScreen />
 							</div>
+							<div style={{position: "absolute", left: "-200px", top: "630px"}}>Play Song ⇛</div>
 							<div>
-								<h2>Singer Songwriter</h2>
+								<h2><NavLink id="link" to="/music">Singer Songwriter</NavLink></h2>
 								<iframe 
 									width="315" 
 									height="315" 
