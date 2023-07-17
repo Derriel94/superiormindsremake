@@ -3,6 +3,7 @@ import { useState, ChangeEvent } from "react";
 import { motion } from "framer-motion";
 import Nav from "./components/Nav"
 import RouterNav from "./router/RouterNav.tsx"
+import {NavLink} from "react-router-dom";
 
 
 const App = () => {
@@ -33,7 +34,8 @@ const App = () => {
       exit="exit"
       variants={headerVariants}>
         <div><p style={{opacity: .9}}>What Did You Learn Today?</p></div>
-        <div>
+          <div>
+          <div><NavLink id="link" style={{fontSize: ".8rem"}} to="/login">login/register</NavLink></div>
           <input placeholder={search} className="search" onChange={(e)=>handleSearchChange(e)}/>
           <input type="submit" value="GO" onClick={handleSubmit} className="gobutton" />
         </div>

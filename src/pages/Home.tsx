@@ -5,17 +5,25 @@ const Home = () => {
 
 	return (
 		<div className="home">
-			<div className="left-side">
+			<motion.div 
+			initial={{opacity: 0}}
+			animate={{opacity: 1}}
+			transition={{delay: 1, duration: 3}}
+			className="left-side">
 				<h1>MadMac</h1>
-				<motion.img 
-				initial={{opacity: 0}}
-				animate={{opacity: 1}}
-				transition={{delay: 1, duration: 3}}
+				<img 
 				className="mainimg"
 				src="./headshot.svg" />
-			</div>
-			<div>
-
+			</motion.div>
+			<div className="mid-side">
+				<p>My versatility with my voice is what makes me most unique, 
+          I am a singer-songwriter. 
+          I am a poet lyricists a rapper I can sing I can turn into your favorite 
+          monster or narrate your true crime documentary. 
+          I love every category I get to work in, I got my start in audiobooks. 
+          I still do them but not as much since I have been exploring the wonderful world of voiceover. 
+          I have met some amazing and notable producers and writers and videographers in my journey this business keeps a smile on my face.  
+          I challenge myself daily with being the best voice artist I can possibly and I am absolutely passionate about what I do.</p>
 			</div>
 				<div className="right-side">
 						<div style={{display: "flex",alignItems:"center",justifyContent: "space-around"}}>
