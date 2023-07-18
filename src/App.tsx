@@ -1,14 +1,18 @@
 import './App.css'
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import { motion } from "framer-motion";
 import Nav from "./components/Nav"
 import RouterNav from "./router/RouterNav.tsx"
 import {NavLink} from "react-router-dom";
+import { logout } from "./firebaseConfig.tsx";
+import { useNavigate } from "react-router-dom";
 
 
 const App = () => {
 
   const [search, setSearch] = useState<string>("search")
+  const [displayName, setDisplayName] = useState<string>('');
+  const navigate = useNavigate();
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   }
@@ -23,10 +27,25 @@ const App = () => {
 
     };
 
+  const checkIfLoggedIn = () => {
+     
+    }
 
+  const signOut = () => {
+    localStorage.removeItem('user');
+    setDisplayName('');
+    logout();
+    location.reload();
+  }
+
+  useEffect(()=> {
+    checkIfLoggedIn();    
+    // setDisplayName('');
+  }, [])
 
   return (
     <div className="app">
+  
       <motion.div 
       className="header"
       initial="initial"
@@ -35,7 +54,15 @@ const App = () => {
       variants={headerVariants}>
         <div><p style={{opacity: .9}}>What Did You Learn Today?</p></div>
           <div>
-          <div><NavLink id="link" style={{fontSize: ".8rem"}} to="/login">login/register</NavLink></div>
+           {displayName.length > 0?
+            <div>
+              <div id="link" style={{fontSize: ".8rem"}}>{displayName}</div>
+              <button  onClick={signOut}>Sign Out</button>
+            </div>
+            :
+            <div><NavLink id="link" style={{fontSize: ".8rem"}} to="/login">login/register</NavLink></div>
+            
+            }
           <input placeholder={search} className="search" onChange={(e)=>handleSearchChange(e)}/>
           <input type="submit" value="GO" onClick={handleSubmit} className="gobutton" />
         </div>

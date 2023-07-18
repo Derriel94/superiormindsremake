@@ -7,6 +7,7 @@ import VoiceOver from "./../pages/VoiceOver.tsx";
 import Contact from "./../pages/Contact.tsx";
 import Bio from "./../pages/Bio.tsx";
 import Login from "./../components/Login.tsx";
+import Editor from "./../components/Editor.tsx";
 
 interface RouterProps { 
 	
@@ -25,6 +26,7 @@ const RouterNav = ({}: RouterProps) => {
 		      	<Route path="/bio" element={<Bio />} />
 		      	<Route path="/contact" element={<Contact />} />
 		      	<Route path="/login" element={<Login />} />
+		      	<Route path="/editor" element={<Editor />} />
 		      	<Route path="/home" element={<Home />} />
 	      	</Routes>
 		);
