@@ -2,14 +2,17 @@ import './App.css'
 import { useState, ChangeEvent, useEffect } from "react";
 import { motion } from "framer-motion";
 import Nav from "./components/Nav"
+import Search from "./components/Search.tsx"
 import RouterNav from "./router/RouterNav.tsx"
+import { useAuthState } from "react-firebase-hooks/auth";
 import {NavLink} from "react-router-dom";
-import { logout } from "./firebaseConfig.tsx";
 import { useNavigate } from "react-router-dom";
+import {db, auth, logout} from "./firebaseConfig.tsx"
+import { collection, onSnapshot, orderBy, query, setDoc, doc, updateDoc, addDoc, arrayUnion } from "firebase/firestore";
 
 
 const App = () => {
-
+  const [user, loading, error] = useAuthState(auth);
   const [search, setSearch] = useState<string>("search")
   const [displayName, setDisplayName] = useState<string>('');
   const navigate = useNavigate();
@@ -18,7 +21,22 @@ const App = () => {
   }
   const handleSubmit = () => {
  
-    }
+  }
+    const [blogs, setBlogs] = useState<array>([{title: "temp", desc: "temporary"},{title: "temp", desc: "temporary"},{title: "temp", desc: "temporary"}]);
+
+  useEffect(()=>{
+    const articleRef = collection(db, "blogs");
+    const q = query(articleRef, orderBy("createdAt"));
+    onSnapshot(q,(snapshot)=>{
+      const blogs = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setBlogs(blogs);
+      console.log(blogs[0]);
+    });
+  },[])
+
     const headerVariants = {
       initial: {opacity: 0, y: -35},
       animate: {opacity: 1, y: 0, transition: {
@@ -28,21 +46,40 @@ const App = () => {
     };
 
   const checkIfLoggedIn = () => {
-     
+    const check = localStorage.getItem('user');
+         if (check) {
+          setDisplayName(check); 
+          if (check == "MadMac")  {
+                navigate('/editor');
+            } else {
+                navigate('/blogs');
+            }
+         } else {
+          if (loading) return;
+          if (user){
+            setDisplayName(user.displayName)
+            if (user.displayName == "MadMac")  {
+                navigate('/editor');
+            } else {
+                navigate('/blogs');
+            }
+            }
+           }
     }
 
   const signOut = () => {
-    localStorage.removeItem('user');
-    setDisplayName('');
     logout();
+    localStorage.removeItem('user');
     location.reload();
+    navigate('/login')
+    setDisplayName('');
   }
 
   useEffect(()=> {
     checkIfLoggedIn();    
     // setDisplayName('');
-  }, [])
-
+  }, [displayName])
+  console.log(user);
   return (
     <div className="app">
   
@@ -63,12 +100,11 @@ const App = () => {
             <div><NavLink id="link" style={{fontSize: ".8rem"}} to="/login">login/register</NavLink></div>
             
             }
-          <input placeholder={search} className="search" onChange={(e)=>handleSearchChange(e)}/>
-          <input type="submit" value="GO" onClick={handleSubmit} className="gobutton" />
+        <Search />
         </div>
       </motion.div>
       <Nav />
-      <RouterNav />
+      <RouterNav blogs={{blogs}} displayName={displayName} setDisplayName={setDisplayName}/>
       <div className="footer">
         <h1>Social Media</h1>
         <div>

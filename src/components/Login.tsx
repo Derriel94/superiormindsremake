@@ -1,13 +1,15 @@
 import {useState, useEffect, ChangeEvent} from "react";
 import { useNavigate } from "react-router-dom";
-import { registerUser, signin, logout } from "./../firebaseConfig.tsx";
+import { registerUser, signin, logout, auth } from "./../firebaseConfig.tsx";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { toast }from 'react-toastify';
 
 interface LoginProps { 
-	
+	setDisplayName,
 };
 
 
-const Login = ({}: LoginProps) => {
+const Login = ({setDisplayName}: LoginProps) => {
 
 	const [loggedInSwitch, setLoggedInSwitch] = useState<boolean>(true);
 	const [email, setEmail] = useState<string>('');
@@ -35,22 +37,24 @@ const Login = ({}: LoginProps) => {
     	if (login)
     	{
     		const res = await signin(email, password);
-    		alert(res);
-    		localStorage.setItem("user", res);
-    		location.reload();
+    		toast(res);
+    		localStorage.setItem('user', res);
+    		setDisplayName(res);
+    		// location.reload();
     		 // const check = localStorage.getItem('user');
 		     //  setDisplayName(check);  
-		      if (res == 'MadMacs') {
-		         navigate('/editor');
-		      } else {
-		      	navigate('/home')
-		      }
+		      // if (res == 'MadMac') {
+		      //    navigate('/editor');
+		      // } else {
+		      // 	navigate('/blogs')
+		      // }
 
     	} else {
     		const res = await registerUser(email, password, name);
-    		console.log(res);
-    		localStorage.setItem("user", res);
-    		location.reload();
+    		toast(res);
+    		localStorage.setItem('user', res);
+    		setDisplayName(res);
+    		// location.reload();
     	}
   	}
   	const checkIfLoggedIn = () => {
@@ -69,6 +73,7 @@ const Login = ({}: LoginProps) => {
 		}
 		
 	}, [])
+
 
 	return (
 			<div className="login-register">

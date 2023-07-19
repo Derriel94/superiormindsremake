@@ -10,23 +10,25 @@ import Login from "./../components/Login.tsx";
 import Editor from "./../components/Editor.tsx";
 
 interface RouterProps { 
-	
+	displayName,
+	setDisplayName,
+	blogs,
 };
 
 
-const RouterNav = ({}: RouterProps) => {
+const RouterNav = ({blogs, displayName, setDisplayName}: RouterProps) => {
 
 	return (
 			<Routes>  	
 				<Route path="/" element={<Navigate to='/home'/>} />
-		      	<Route path="/blogs" element={<Blogs />} />
+		      	<Route path="/blogs" element={<Blogs blogs={blogs} />} />
 		      	<Route path="/searched" element={<Searched />} />
 		      	<Route path="/music" element={<Music />} />
 		      	<Route path="/voiceover" element={<VoiceOver />} />
 		      	<Route path="/bio" element={<Bio />} />
 		      	<Route path="/contact" element={<Contact />} />
-		      	<Route path="/login" element={<Login />} />
-		      	<Route path="/editor" element={<Editor />} />
+		      	<Route path="/login" element={<Login setDisplayName={setDisplayName}/>} />
+		      	<Route path="/editor" element={<Editor displayName={displayName} />} />
 		      	<Route path="/home" element={<Home />} />
 	      	</Routes>
 		);

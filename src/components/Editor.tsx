@@ -1,12 +1,15 @@
- import React, { useState } from 'react'
+ import React, { useState, useEffect } from 'react'
 import { toast }from 'react-toastify';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 // import Blogs from './Blogs/Blogs.js';
-import { storage, db } from './../firebaseConfig.js';
+import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { storage, db,auth } from './../firebaseConfig.js';
 
-const Editor = () => {
-
+const Editor = ({displayName}) => {
+		const [user, loading, error] = useAuthState(auth);
+		const navigate = useNavigate();
 		const [formData, setFormData] = useState({
 		title: "",
 		description: "",
@@ -75,7 +78,14 @@ const Editor = () => {
       }
     );
 	};
-	
+	useEffect(()=> {
+
+			if (displayName !== "MadMac") {
+				toast('Access Denied');
+				navigate('/home');
+			} 
+		
+	},[])
 	return (
 		<div className="editor">
 			<div>
