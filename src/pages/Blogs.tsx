@@ -14,7 +14,11 @@ const Blogs = ({blogs}) => {
 	return (
 		<div className="blogs">
 		<h1 style={{textAlign: "center"}}>Creative Writing</h1>
-			<motion.div
+		{blogs.blogs[0].title == "temp" ?
+			<></>
+		:
+			<div>
+						<motion.div
 		        className="featuredblog"
 		        initial="initial"
 		        animate="animate"
@@ -77,6 +81,9 @@ const Blogs = ({blogs}) => {
 	      	}
 		    
 	      </div>
+			</div>}
+		
+	
       </div>
 		);
 };

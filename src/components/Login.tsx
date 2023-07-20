@@ -83,11 +83,11 @@ const Login = ({setDisplayName}: LoginProps) => {
 					{/*add form rules for passwords and emails*/}
 					<div>
 						<div>Email</div>
-						<input type="text" onChange={(e)=>handleEmailChange(e)}/>
+						<input  type="email" id="email" required onChange={(e)=>handleEmailChange(e)}/>
 					</div>
 					<div>
 						<div>Password</div>
-						<input type="text" onChange={(e)=>handlePasswordChange(e)}/>
+						<input type="password" required onChange={(e)=>handlePasswordChange(e)}/>
 					</div>
 			
 					<div>
@@ -103,15 +103,15 @@ const Login = ({setDisplayName}: LoginProps) => {
 					{/*add form rules for passwords and emails*/}
 					<div>
 						<div>Email</div>
-						<input type="text" onChange={(e)=>handleEmailChange(e)}/>
+						<input  type="email" id="email" required onChange={(e)=>handleEmailChange(e)}/>
 					</div>
 					<div>
 						<div>Password</div>
-						<input type="text" onChange={(e)=>handlePasswordChange(e)}/>
+						<input type="password" required onChange={(e)=>handlePasswordChange(e)}/>
 					</div>
 					<div>
 						<div>User Name</div>
-						<input type="text" onChange={(e)=>handleNameChange(e)}/>
+						<input type="text" required onChange={(e)=>handleNameChange(e)}/>
 					</div>
 					<div>
 						<input style={{marginTop: "10px", cursor: "pointer"}}type="submit" value="submit" onClick={handleSubmit}/>
