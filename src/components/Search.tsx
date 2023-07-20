@@ -12,7 +12,7 @@ const Search = () => {
       <div>    
           <input placeholder={search} className="search" onChange={(e)=>handleSearchChange(e)}/>
           <input type="submit" value="GO" onClick={handleSubmit} className="gobutton" />
-          </div>
+        </div>
     );
 };
 

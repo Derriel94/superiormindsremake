@@ -6,6 +6,7 @@ import Searched from "./../pages/Searched.tsx";
 import VoiceOver from "./../pages/VoiceOver.tsx";
 import Contact from "./../pages/Contact.tsx";
 import Bio from "./../pages/Bio.tsx";
+import Blog from "./../pages/Blog.tsx";
 import Login from "./../components/Login.tsx";
 import Editor from "./../components/Editor.tsx";
 
@@ -13,16 +14,19 @@ interface RouterProps {
 	displayName,
 	setDisplayName,
 	blogs,
+	search,
 };
 
 
-const RouterNav = ({blogs, displayName, setDisplayName}: RouterProps) => {
+const RouterNav = ({search, blogs, displayName, setDisplayName}: RouterProps) => {
 
 	return (
 			<Routes>  	
 				<Route path="/" element={<Navigate to='/home'/>} />
 		      	<Route path="/blogs" element={<Blogs blogs={blogs} />} />
-		      	<Route path="/searched" element={<Searched />} />
+		      	<Route path="/blogs/:blog" element={<Blog blogs={blogs} />} />
+		      	<Route path="/searched" element={<Searched blogs={blogs} search={search} />} />
+		      	<Route path="/searched/:blog" element={<Blog blogs={blogs} search={search} />} />
 		      	<Route path="/music" element={<Music />} />
 		      	<Route path="/voiceover" element={<VoiceOver />} />
 		      	<Route path="/bio" element={<Bio />} />

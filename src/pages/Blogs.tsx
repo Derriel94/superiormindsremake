@@ -10,7 +10,7 @@ const Blogs = ({blogs}) => {
       }},
 
     };
-    console.log(blogs.blogs[0].title)
+
 	return (
 		<div className="blogs">
 		<h1 style={{textAlign: "center"}}>Creative Writing</h1>
@@ -29,16 +29,16 @@ const Blogs = ({blogs}) => {
 		        <motion.h2 className="blogtitle"
 		        	initial={{opacity: 0}}
 			        animate={{opacity: 1}}
-			        transition={{delay: 1.5, duration: 1}}>{blogs.blogs[1].title}</motion.h2>
+			        transition={{delay: 1.5, duration: 1}}>{blogs.blogs[1].title.substring(0, 10)}</motion.h2>
 		        <motion.p className="bloginfo-short"
 		        	initial={{opacity: 0}}
 			        animate={{opacity: 1}}
-			        transition={{delay: 1.7, duration: 1}}>{blogs.blogs[1].description}</motion.p>
+			        transition={{delay: 1.7, duration: 1}}>{blogs.blogs[1].description.substring(0, 100)}...</motion.p>
 		        <motion.div
 		        	initial={{opacity: 0}}
 			        animate={{opacity: 1}}
 			        transition={{delay: 2, duration: 1}}>
-		        	<Link className="fullbloglink" to="/blogs">Read More..</Link>
+		        	<Link className="fullbloglink" to={`${blogs.blogs[1].id}`}>Read More..</Link>
 		        </motion.div>	
 	        </motion.div>
 	        <motion.div 
@@ -49,39 +49,33 @@ const Blogs = ({blogs}) => {
 		        <motion.h2 className="blogtitle"
 		        	initial={{opacity: 0}}
 			        animate={{opacity: 1}}
-			        transition={{delay: 1.5, duration: 1}}>{blogs.blogs[2].title}</motion.h2>
+			        transition={{delay: 1.5, duration: 1}}>{blogs.blogs[2].title.substring(0, 25)}</motion.h2>
 		        <motion.p className="bloginfo-short"
 		        	initial={{opacity: 0}}
 			        animate={{opacity: 1}}
-			        transition={{delay: 1.7, duration: 1}}>{blogs.blogs[2].description}</motion.p>
+			        transition={{delay: 1.7, duration: 1}}>{blogs.blogs[2].description.substring(0, 100)}...</motion.p>
 		        <motion.div
 		        	initial={{opacity: 0}}
 			        animate={{opacity: 1}}
 			        transition={{delay: 2, duration: 1}}>
-		        	<Link className="fullbloglink" to="/blogs">Read More..</Link>
+		        	<Link className="fullbloglink" to={`${blogs.blogs[2].id}`}>Read More..</Link>
 		        </motion.div>	
 	        </motion.div>
 	      </motion.div>
 	      <div
 	      	className="smallblogsection">
-		      	<div>
-			      	<img src="./2.jpg" />
-			      	<h4> Voice Actor</h4>
-			      	<p>Using my voice to save the world 1 syllable at a time.</p>
-			      	<div><Link to="/">Read More..</Link></div>
-		      	</div>
-		      	<div>
-			      	<img src="./2.jpg" />
-			      	<h4> Voice Actor</h4>
-			      	<p>Using my voice to save the world 1 syllable at a time.</p>
-		      	<div><Link to="/">Read More..</Link></div>
-	      	</div>
-	      	<div>
-			      	<img src="./2.jpg" />
-			      	<h4> Voice Actor</h4>
-			      	<p>Using my voice to save the world 1 syllable at a time.</p>
-		      	<div><Link to="/">Read More..</Link></div>
-	      	</div>
+	      	{
+	      		blogs.blogs.map((blog)=> {
+	      			return (
+	      			<div>
+			      	<img src={blog.imageUrl} />
+			      	<h4>{blog.title}</h4>
+			      	<p>{blog.description.substring(0, 100)}...</p>
+			      	<div><Link id ="link" to={`${blog.id}`}>Read More..</Link></div>
+		      	</div>)
+	      		})
+	      	}
+		    
 	      </div>
       </div>
 		);

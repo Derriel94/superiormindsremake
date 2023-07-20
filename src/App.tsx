@@ -8,21 +8,25 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import {NavLink} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {db, auth, logout} from "./firebaseConfig.tsx"
-import { collection, onSnapshot, orderBy, query, setDoc, doc, updateDoc, addDoc, arrayUnion } from "firebase/firestore";
+import { Timestamp, collection, onSnapshot, orderBy, query, setDoc, doc, updateDoc, addDoc, arrayUnion } from "firebase/firestore";
 
 
 const App = () => {
   const [user, loading, error] = useAuthState(auth);
-  const [search, setSearch] = useState<string>("search")
   const [displayName, setDisplayName] = useState<string>('');
   const navigate = useNavigate();
+  const [search, setSearch] = useState<string>("")
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   }
   const handleSubmit = () => {
- 
+      navigate('/searched')
   }
-    const [blogs, setBlogs] = useState<array>([{title: "temp", desc: "temporary"},{title: "temp", desc: "temporary"},{title: "temp", desc: "temporary"}]);
+    const [blogs, setBlogs] = useState<array>(
+      [{
+        title: "temp", desc: "temporary", createdAt: {nanoseconds: 1111, seconds: 11111},},
+        {title: "temp", desc: "temporary", createdAt: {nanoseconds: 1111, seconds: 11111},},
+        {title: "temp", desc: "temporary", createdAt: {nanoseconds: 1111, seconds: 11111},}]);
 
   useEffect(()=>{
     const articleRef = collection(db, "blogs");
@@ -77,7 +81,6 @@ const App = () => {
 
   useEffect(()=> {
     checkIfLoggedIn();    
-    // setDisplayName('');
   }, [displayName])
   console.log(user);
   return (
@@ -100,11 +103,12 @@ const App = () => {
             <div><NavLink id="link" style={{fontSize: ".8rem"}} to="/login">login/register</NavLink></div>
             
             }
-        <Search />
+          <input placeholder={search} className="search" onChange={(e)=>handleSearchChange(e)}/>
+          <input type="submit" value="GO" onClick={handleSubmit} className="gobutton" />
         </div>
       </motion.div>
       <Nav />
-      <RouterNav blogs={{blogs}} displayName={displayName} setDisplayName={setDisplayName}/>
+      <RouterNav search={search} blogs={{blogs}} displayName={displayName} setDisplayName={setDisplayName}/>
       <div className="footer">
         <h1>Social Media</h1>
         <div>
